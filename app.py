@@ -124,12 +124,3 @@ def text_generator(task : str, image, theme:str):
     text = response.choices[0]['message']['content']
 
     return text
-
-
-
-
-    
-
-
-                
-
