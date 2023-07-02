@@ -34,6 +34,7 @@ def post_generator(task : str, image_desc :str, theme :str, text_pos :str):
     image = PIPE(
                   image_desc,
                   negative_prompt=NEG_PROMPT,
+                  num_inference_steps=25
                 ).images[0]
 
     content_mapper = {
@@ -124,7 +125,7 @@ def text_generator(task : str, image, theme:str):
     text = response.choices[0]['message']['content']
 
     return text
-
+    
 
 def check_inputs_1(selected_option, image_description, theme, text_position):
     if len(str(image_description)) == 0:
@@ -156,16 +157,12 @@ def feature1(selected_option, image_description, theme, text_position):
     check = check_inputs_1(selected_option, image_description, theme, text_position)
     if check != "valid":
         return {error_box1: gr.update(value=check, visible=True)}
-    # print(selected_option, image_description, theme, text_position)
-    
-    # $$$ impp  #
     task = selected_option
     image_desc = image_description 
     theme = theme 
     text_pos = text_position
     
     img = post_generator(task, image_desc, theme,text_pos)
-    # $$$ impp  #
 
     return [img,error_box]
 
@@ -174,15 +171,10 @@ def feature2(selected_option2,image_input,Theme):
     check = check_inputs_2(selected_option2,image_input,Theme)
     if check != "valid":
         return {error_box: gr.update(value=check, visible=True)}
-    
-    # $$$ impp  #
-
     task = selected_option2
     image = image_input
     theme = Theme
     text_gen =  text_generator(task , image, theme)
-
-    # $$$ impp  #
 
     return [text_gen,error_box]
     
@@ -190,9 +182,9 @@ def feature2(selected_option2,image_input,Theme):
 with gr.Blocks() as demo:
     
     gr.Markdown('<style>h1 { background-color: pink; text-align: center; }</style>')  # Added CSS styling for text alignment
-    gr.Markdown("<h1>THE IDEA FACTORY</h1>")  # Centered heading
+    gr.Markdown("<h1>Social Media Post Generator</h1>")  # Centered heading
 
-    with gr.Tab("Instant POST Generator"):
+    with gr.Tab("Text2Post"):
         
         error_box1 = gr.Textbox(label="Error", visible=False)
 
@@ -213,7 +205,7 @@ with gr.Blocks() as demo:
         """OUTPUT"""
         output_image = gr.Image(label="output", width = 512, height = 512)
         
-    with gr.Tab("Image2Insight: Visionary Summarizer"):
+    with gr.Tab("Image2Insight"):
 #         with gr.Row():
         error_box = gr.Textbox(label="Error", visible=False)
         dropdown_options = ["Story", "Lyrics","Poem"]
@@ -227,4 +219,4 @@ with gr.Blocks() as demo:
     text_button.click(feature1, inputs=[selected_option,image_description, theme, text_position], outputs=[output_image,error_box1])
     image_button.click(feature2,inputs=[selected_option2,image_input,Theme], outputs=[text_output,error_box])
 
-demo.launch(debug = True, share=True)
+demo.launch(debug = True)
