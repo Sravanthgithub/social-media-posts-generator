@@ -25,6 +25,8 @@ image = Image.open(image_path)
 image.show()
 ```
 ### Here is the image generated
+![image](https://github.com/Sravanthgithub/social-media-posts-generator/assets/77894804/fc9caf9f-0c45-45a8-bc53-5dd86c23303e)
+
 
 ```python
 import requests
