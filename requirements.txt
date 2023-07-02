@@ -1,5 +1,4 @@
 python == 3.8
-openfabric-pysdk == 0.2.6
 transformers == 4.30.1
 torch == 2.0.1
 diffusers == 0.17.0
@@ -7,3 +6,4 @@ accelerate == 0.20.3
 openai == 0.27.8
 gradio
 pillow == 8.4.0
+numpy
