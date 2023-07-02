@@ -13,11 +13,11 @@ from PIL import Image
 from gradio_client import Client
 client = Client("https://sravanth-social-media-post-generator.hf.space/")
 result = client.predict(
-				"Memes",	# str (Option from: ['Memes', 'Jokes', 'Slogans', 'Inspirational Quotes']) in 'Category' Dropdown component
-				"A kid crying just after returning from school",	# str  in 'Image Description/prompt' Textbox component
-				"Bad results",	# str  in 'Theme' Textbox component
-				"top",	# str (Option from: ['top', 'bottom']) in 'text_position' Dropdown component
-				fn_index=0
+            "Memes",	# str (Option from: ['Memes', 'Jokes', 'Slogans', 'Inspirational Quotes']) in 'Category' Dropdown component
+            "A kid crying just after returning from school",	# str  in 'Image Description/prompt' Textbox component
+            "Bad results",	# str  in 'Theme' Textbox component
+            "top",	# str (Option from: ['top', 'bottom']) in 'text_position' Dropdown component
+            fn_index=0
 )
 
 image_path = result[0]
@@ -32,10 +32,10 @@ img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo
 
 client = Client("https://sravanth-social-media-post-generator.hf.space/")
 result = client.predict(
-				"Poem",	# str (Option from: ['Story', 'Lyrics', 'Poem']) in 'Category' Dropdown component
-				img_url,	# str (filepath or URL to image) in 'parameter_17' Image component
-				"Beautiful Life",	# str  in 'Theme' Textbox component
-				fn_index=1
+            "Poem",	# str (Option from: ['Story', 'Lyrics', 'Poem']) in 'Category' Dropdown component
+            img_url,	# str (filepath or URL to image) in 'parameter_17' Image component
+            "Beautiful Life",	# str  in 'Theme' Textbox component
+            fn_index=1
 )
 print(result)
 ``` 
