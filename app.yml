@@ -1,4 +1,4 @@
-runtime: python38
+runtime: python310
 
 env_variables:
   OPENAI_TOKEN: ''
