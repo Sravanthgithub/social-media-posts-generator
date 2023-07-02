@@ -2,6 +2,8 @@
 
 ## Description
 
+MERCOR -AI TRACK (2)
+
 This is a simple social media posts generator. It can create posts for any time of Social Media. Ex - Memes, Inspirational Quotes, Slogans, Jokes etc. 
 
 This can also create Stories, Poems, Songs based on an image :D (Yes, you heard it right!)
