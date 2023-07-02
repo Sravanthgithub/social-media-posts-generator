@@ -14,6 +14,7 @@ import os
 from io import BytesIO
 CWD = os.getcwd()
 
+openai_token = os.environ['OPENAI_TOKEN']
 
 MEME_FONT_PATH = os.path.join(CWD,  'fonts', 'impact.ttf')
 
@@ -26,7 +27,7 @@ PROCESSOR = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-larg
 MODEL = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-large")
 
 
-openai.api_key = OPENAI_TOKEN
+openai.api_key = openai_token
 
 
 def post_generator(task : str, image_desc :str, theme :str, text_pos :str):
