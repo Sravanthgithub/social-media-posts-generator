@@ -35,6 +35,9 @@ image = Image.open(image_path)
 image.show()
 ```
 ### Here is the image generated
+
+(This might actually take 7-8 mins for generation, since its on cpu right now.)
+
 ![image](https://github.com/Sravanthgithub/social-media-posts-generator/assets/77894804/fc9caf9f-0c45-45a8-bc53-5dd86c23303e)
 
 
@@ -52,6 +55,8 @@ result = client.predict(
 print(result)
 ``` 
 ### Here is the poem generated
+
+(This might take 3-4 mins.)
 
 ```
 A woman sits upon the shore,
