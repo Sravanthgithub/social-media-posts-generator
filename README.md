@@ -11,6 +11,7 @@ This can also create Stories, Poems, Songs based on an image :D (Yes, you heard 
 #### Deployed API End Point - https://huggingface.co/spaces/Sravanth/Social-Media-Post-Generator
 
 But since our project uses huge models and we deployed on CPU instances, the UI gets disconned every time in hugging face. So we recommend using it as an API Endpoint in your own files/projects.
+P.S - We are ready for buying GPU instances for the evaluation but we are not sure when exactly out project will be evaluated and that might be any time in the next 5-6 days. That costs a bit too much :(
 
 ### Requirements to run as an API Endpoint 
 
